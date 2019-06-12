@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+   function decimal() {
+        var res1="";
+        for(i=0;i<10;i++){
+
+var aleatorio =(Math.random().toFixed(2)) ;
+  res1=res1+aleatorio+"\n";
+        }
+    document.getElementById('texto2').value=res1;
+    }
+</script>
+<body>
+    <center>
+        <h1>Números decimales</h1>
+        <input type="button" value="aleatorio" onclick="decimal()">
+        <textarea name="" id="texto2" cols="30" rows="10"></textarea>
+        <br>
+    </center>
+</body>
+</html>
