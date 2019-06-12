@@ -1,0 +1,52 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<body>
+<div id="my-svg"></div>   
+</body>
+<!-- Importamos la libreria rafael-->
+<script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js"></script>
+<!-- Importamos nuestras clases a este trabajo-->
+<script src="../libs/LASCHX/geometry/triangle.js"></script>
+<script src="../libs/LASCHX/geometry/Point.js"></script>
+<script src="../libs/LASCHX/geometry/circle.js"></script>
+<script src="../libs/LASCHX/geometry/line.js"></script>
+<script src="../libs/LASCHX/geometry/rectangle.js"></script>
+<script src="../libs/LASCHX/geometry/square.js"></script>
+
+
+<script>
+var pt = new Point(140,200);
+var inicioRectangulo = new Point(50,100);
+var inicoTriangulo= new Point(400,100);
+var segundoTriangulo= new Point(200,100);
+var tercerTriangulopt=new Point(200, 300);
+var inicioCirculo = new Point(410,210);
+var ptLinea=new Point(35,310);
+var ptLinea2=new Point(510,310);
+
+var cuadrado = new Square(inicioRectangulo, 50);
+var cir = new Circle(inicioCirculo,60);
+var tri = new Triangle(inicoTriangulo, segundoTriangulo, tercerTriangulopt);
+var rec = new Rectangle( inicioRectangulo,pt);
+var linea = new Line(ptLinea2   , ptLinea);
+
+
+var paper = Raphael (document.getElementById('my-svg'), 600, 400);
+
+var rect = paper.rect (10,10,600,400);
+rect.attr('fill','#147');
+
+var figuraCirculo = paper.circle(cir.p1.x, cir.p1.y, cir.r);
+figuraCirculo.attr('fill','yellow')
+var figuraTriangulo = paper.path(`M${tri.p1.x},${tri.p1.y},L${tri.p2.x},${tri.p2.y},L${tri.p3.x},${tri.p3.y},L${tri.p1.x},${tri.p1.y}`);
+figuraTriangulo.attr('fill','red');
+var figuraRectangulo = paper.rect(rec.p1.x, rec.p1.y, rec.p2.x, rec.p2.y);
+figuraRectangulo.attr('fill','#bfff00')
+var figuraCuadrado = paper.rect(cuadrado.p1.x, cuadrado.p1.y, cuadrado.l, cuadrado.l);
+figuraCuadrado.attr('fill','#ff388d')
+var unaLinea = paper.path(`M${linea.p1.x},${linea.p1.y},L${linea.p2.x},${linea.p2.y}`);
+ 
+
+</script>
+</html>
