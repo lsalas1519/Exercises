@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js"></script>
+<script type="module">
+    import {Circle} from './circle.js';
+    import {Point} from './Point.js';
+
+    var punto = new Point(250,200);
+    var circulo = new Circle(punto,40);
+    var myCircle = paper.circle(circulo.p1.x, circulo.p1.y, circulo.r);
+
+</script>
+</body>
+</html>
